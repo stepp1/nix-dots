@@ -39,7 +39,9 @@
       neovim
       gnupg
       git-crypt
+      pinentry-gnome
     ];
+
   };
 
   programs = {
@@ -49,7 +51,7 @@
       userName  = "Stepp1";
       userEmail = "sfaragg@gmail.com";
     };
-
+    gpg.enable = true;
 #    steam.enable = true;
     zsh = {
       enable = true;
@@ -73,6 +75,10 @@
      enableCompletion = true;
      completionInit = "autoload -U compinit && compinit";
     };
+  };
+
+  services.gpg-agent = {
+      enable = true;
   };
 
   # release: https://nix-community.github.io/home-manager/release-notes.html

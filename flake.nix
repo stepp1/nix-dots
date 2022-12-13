@@ -7,7 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  
+
   outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       step-nixos = nixpkgs.lib.nixosSystem {
@@ -16,8 +16,8 @@
         modules = [ ./nixos/configuration.nix ];
       };
     };
-  
-  homeConfigurations = {
+
+    homeConfigurations = {
       "step@step-nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config

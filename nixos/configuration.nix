@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./zfs.nix
       <home-manager/nixos>
@@ -18,7 +19,7 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.zfs.extraPools = [ "MyData" ];
 
-  networking.hostName = "step-nixos"; 
+  networking.hostName = "step-nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -109,7 +110,7 @@
     packages = with pkgs; [
       firefox
       tdesktop
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -120,27 +121,28 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  
-  environment.variables.EDITOR = "nvim"; 
+
+  environment.variables.EDITOR = "nvim";
   environment.systemPackages = with pkgs; [
-     # system
-     vim 
-     wget
-     git
-     xsel
-     xclip
-     home-manager
-     
-     # wm/de
-     gnome.gnome-tweaks
-     dconf
-     gnome.dconf-editor
-     gnomeExtensions.pop-shell
-     
-     # code
-     vscode.fhs
-     conda
-     black
+    # system
+    vim
+    wget
+    git
+    xsel
+    xclip
+    home-manager
+
+    # wm/de
+    gnome.gnome-tweaks
+    dconf
+    gnome.dconf-editor
+    gnomeExtensions.pop-shell
+
+    # code
+    vscode.fhs
+    conda
+    black
+    nixpkgs-fmt
   ];
 
   #programs.dconf = {
@@ -152,10 +154,10 @@
   #        };
   #      };
   #};
-  programs.steam.enable = true; 
+  programs.steam.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-  
+
   # Fonts
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
@@ -184,7 +186,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

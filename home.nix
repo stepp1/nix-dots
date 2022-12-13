@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: 
+{ inputs, lib, config, pkgs, ... }:
 {
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -33,7 +33,7 @@
     homeDirectory = "/home/step";
     packages = with pkgs; [
       tree
-      htop 
+      htop
       tmux
       ranger
       neovim
@@ -48,11 +48,11 @@
     home-manager.enable = true;
     git = {
       enable = true;
-      userName  = "Stepp1";
+      userName = "Stepp1";
       userEmail = "sfaragg@gmail.com";
     };
     gpg.enable = true;
-#    steam.enable = true;
+    #    steam.enable = true;
     zsh = {
       enable = true;
       autocd = true;
@@ -64,21 +64,21 @@
         vi = "nvim";
         vim = "nvim";
       };
-  
+
       oh-my-zsh = {
         enable = true;
         plugins = [ "git" ];
         theme = "robbyrussell";
       };
-     enableSyntaxHighlighting = true;
-     enableAutosuggestions = true;
-     enableCompletion = true;
-     completionInit = "autoload -U compinit && compinit";
+      enableSyntaxHighlighting = true;
+      enableAutosuggestions = true;
+      enableCompletion = true;
+      completionInit = "autoload -U compinit && compinit";
     };
   };
 
   services.gpg-agent = {
-      enable = true;
+    enable = true;
   };
 
   # release: https://nix-community.github.io/home-manager/release-notes.html

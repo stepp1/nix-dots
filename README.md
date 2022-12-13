@@ -35,4 +35,11 @@ git-crypt add-gpg-user sfaragg@gmail.com
 git-crypt export-key ../git-crypt.key
 ```
 
+- **Lock and Unlock**
+```bash
+git-crypt unlock 
+...
+git-crypt lock 
+```
+
 

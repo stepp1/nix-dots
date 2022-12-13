@@ -6,6 +6,18 @@ git clone ... nix-dots
 ln -s ~/nix-dots/ ~/.config/nixpkgs
 ```
 
+## Updating 
+
+- **Not as flakes**
+```bash
+# Update the user config
+./scripts/update-users.sh
+./scripts/apply-users.sh
+
+# Update the system config (will ask for sudo passwd)
+./scripts/update-system.sh
+./scripts/apply-system.sh
+```
 
 ## GPG and Git-Crypt
 
@@ -35,11 +47,16 @@ git-crypt add-gpg-user sfaragg@gmail.com
 git-crypt export-key ../git-crypt.key
 ```
 
-- **Lock and Unlock**
+- **Committing + Lock and Unlock**
 ```bash
+# Always unlock before commiting
 git-crypt unlock 
+# Do some stuff
 ...
+# git add, commit
+git add file1 file2
+git commit -m "..."
+
+# Lock after commiting
 git-crypt lock 
 ```
-
-

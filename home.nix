@@ -1,0 +1,79 @@
+{ inputs, lib, config, pkgs, ... }: 
+{
+  imports = [
+    # If you want to use home-manager modules from other flakes (such as nix-colors):
+    # inputs.nix-colors.homeManagerModule
+
+    # You can also split up your configuration and import pieces of it here:
+    # ./nvim.nix
+  ];
+
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      # If you want to use overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
+  home = {
+    username = "step";
+    homeDirectory = "/home/step";
+    packages = with pkgs; [
+      tree
+      htop 
+      tmux
+      ranger
+      neovim
+    ];
+  };
+  programs = {
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      userName  = "Stepp1";
+      userEmail = "sfaragg@gmail.com";
+    };
+
+#    steam.enable = true;
+    zsh = {
+      enable = true;
+      autocd = true;
+
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+        generations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
+        vi = "nvim";
+        vim = "nvim";
+      };
+  
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "git" ];
+        theme = "robbyrussell";
+      };
+     enableSyntaxHighlighting = true;
+     enableAutosuggestions = true;
+     enableCompletion = true;
+     completionInit = "autoload -U compinit && compinit";
+    };
+  };
+
+  # release: https://nix-community.github.io/home-manager/release-notes.html
+  home.stateVersion = "22.05";
+}

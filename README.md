@@ -4,38 +4,23 @@
 
 ```bash
 git clone https://github.com/stepp1/nix-dots.git nix-dots
-```
-
-- **Symlink way**
-```bash
 ln -s ~/nix-dots/ ~/.config/nixpkgs
 sudo ln -s ~/nix-dots/nixos /etc/nixos 
 ```
 
 ## Update
 
--- **As flakes**
-```bash
-cd nix-dots
-# Update packages
-nix flake update
-nix flake lock
-
-# Update config
-sudo nixos-rebuild switch --flake .#
-
-# On future updates just run the `update` commmand
-```
-
-- **Not as flakes**
 ```bash
 # Update the user config
 ./scripts/update-users.sh
 ./scripts/apply-users.sh
+# On future updates just run the `update-hm` commmand
 
 # Update the system config (will ask for sudo passwd)
 ./scripts/update-system.sh
 ./scripts/apply-system.sh
+
+# On future updates just run the `update` commmand
 ```
 
 ## GPG and Git-Crypt

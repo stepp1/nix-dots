@@ -1,4 +1,8 @@
 #!/bin/sh 
+host=$(hostname)
 pushd ~/nix-dots
-./scripts/update-nixos.sh & ./scripts/apply-nixos.sh
-popd 
+nix flake update & nix flake lock
+
+sleep 0.5;
+sudo nixos-rebuild switch --flake .#
+popd

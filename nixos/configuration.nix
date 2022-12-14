@@ -5,7 +5,6 @@
     [
       ./hardware-configuration.nix
       ./zfs.nix
-      <home-manager/nixos>
       ./base.nix
     ];
 

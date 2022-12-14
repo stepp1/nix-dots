@@ -4,23 +4,56 @@
 
 ```bash
 git clone https://github.com/stepp1/nix-dots.git nix-dots
+cd nix-dots
+
+
+chmod +x ./bin/update.sh
+
+# check that hostname and $USER exist in flakes.nix and hosts/
+./update.sh
 ```
 
-## Building System
-```bash
-cd nix-dots
-# Update config
-sudo nixos-rebuild switch --flake .#
-# On future updates just run the `update` commmand
+## Structure
+
+```
+.
+├── bin
+│   ├── hey
+│   ├── README.md
+│   ├── update.sh
+│   ├── update-system.sh
+│   ├── update-user.sh
+│   └── update-versions.sh
+├── flake.lock
+├── flake.nix # defines nixosConfigurations and homeConfigurations
+├── home.nix  # one user to rule them all
+├── hosts     # currently defined hosts
+│   ├── base.nix
+│   ├── common.nix
+│   ├── default.nix
+│   ├── ids
+│   ├── x13
+│   └── zen
+│       ├── configuration.nix
+│       ├── hardware-configuration.nix
+│       ├── README.md
+│       └── zfs.nix
+├── INSTALL.md
+├── LICENSE
+├── modules  # programs and services managed by home-manager
+│   ├── default.nix
+│   ├── modules.nix
+│   ├── programs
+│   │   ├── common.nix
+│   │   ├── default.nix
+│   │   ├── git.nix
+│   │   └── zsh.nix
+│   └── services
+│       └── default.nix
+├── README.md  # this file
+└── SECRETS.md # instructions on how to manage secrets 
 ```
 
-## Updating Packages
-```bash
-cd nix-dots
-# Update packages and lock file 
-nix flake update & nix flake lock
-# On future updates just run the `update-pkgs` commmand
-```
 
 ## Related
 - How to manage secrets (e.g. ssh keys)? See [SECRETS.md](SECRETS.md)

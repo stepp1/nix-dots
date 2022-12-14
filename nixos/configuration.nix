@@ -131,18 +131,12 @@
     xsel
     xclip
     home-manager
-
-    # wm/de
-    gnome.gnome-tweaks
-    dconf
-    gnome.dconf-editor
-    gnomeExtensions.pop-shell
+    nixpkgs-fmt
 
     # code
     vscode.fhs
     conda
     black
-    nixpkgs-fmt
   ];
 
   #programs.dconf = {

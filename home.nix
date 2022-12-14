@@ -32,6 +32,7 @@
     username = "step";
     homeDirectory = "/home/step";
     packages = with pkgs; [
+      # general
       tree
       htop
       tmux
@@ -40,6 +41,12 @@
       gnupg
       git-crypt
       pinentry-gnome
+
+      # gnome
+      gnome.gnome-tweaks
+      dconf
+      gnome.dconf-editor
+      gnomeExtensions.pop-shell
     ];
 
   };

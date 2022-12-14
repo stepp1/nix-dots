@@ -1,9 +1,15 @@
 # My NixOS configuration
 
-## Installation
+## Installation 
+
 ```bash
-git clone ... nix-dots
+git clone https://github.com/stepp1/nix-dots.git nix-dots
+```
+
+- **Symlink way**
+```bash
 ln -s ~/nix-dots/ ~/.config/nixpkgs
+sudo ln -s ~/nix-dots/nixos /etc/nixos 
 ```
 
 ## Updating 

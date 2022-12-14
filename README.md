@@ -6,8 +6,9 @@
 git clone https://github.com/stepp1/nix-dots.git nix-dots
 ```
 
-# Building System
+## Building System
 ```bash
+cd nix-dots
 # Update config
 sudo nixos-rebuild switch --flake .#
 # On future updates just run the `update` commmand
@@ -16,7 +17,7 @@ sudo nixos-rebuild switch --flake .#
 ## Updating Flake
 ```bash
 cd nix-dots
-# Update packages and lock file (optional)
+# Update packages and lock file 
 nix flake update & nix flake lock
 # On future updates just run the `update-flake` commmand
 ```

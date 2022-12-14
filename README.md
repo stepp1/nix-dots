@@ -6,7 +6,7 @@
 git clone https://github.com/stepp1/nix-dots.git nix-dots
 ```
 
-# (Re-)Building System
+# Building System
 ```bash
 # Update config
 sudo nixos-rebuild switch --flake .#

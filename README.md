@@ -12,7 +12,20 @@ ln -s ~/nix-dots/ ~/.config/nixpkgs
 sudo ln -s ~/nix-dots/nixos /etc/nixos 
 ```
 
-## Updating 
+## Update
+
+-- **As flakes**
+```bash
+cd nix-dots
+# Update packages
+nix flake update
+nix flake lock
+
+# Update config
+sudo nixos-rebuild switch --flake .#
+
+# On future updates just run the `update` commmand
+```
 
 - **Not as flakes**
 ```bash

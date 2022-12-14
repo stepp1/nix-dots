@@ -6,7 +6,7 @@
 git clone https://github.com/stepp1/nix-dots.git nix-dots
 ```
 
-## Update
+## Updating and (Re-)Building
 
 ```bash
 cd nix-dots

@@ -65,7 +65,8 @@
 
       shellAliases = {
         ll = "ls -l";
-        update = "sudo nixos-rebuild switch";
+        update = "~/nix-dots/scripts/update.sh";
+        update-hm = "~/nix-dots/scripts/update-hm.sh";
         generations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
         vi = "nvim";
         vim = "nvim";

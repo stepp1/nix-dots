@@ -120,6 +120,7 @@
     xclip
     home-manager
     nixpkgs-fmt
+    zip
 
     # code
     vscode.fhs

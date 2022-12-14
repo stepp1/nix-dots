@@ -19,7 +19,7 @@ sudo nixos-rebuild switch --flake .#
 cd nix-dots
 # Update packages and lock file 
 nix flake update & nix flake lock
-# On future updates just run the `update-flake` commmand
+# On future updates just run the `update-pkgs` commmand
 ```
 
 ## Related

@@ -66,7 +66,7 @@
       shellAliases = {
         ll = "ls -l";
         update = "~/nix-dots/scripts/update.sh";
-        update-flake = "~/nix-dots/scripts/update-flake.sh";
+        update-flake = "~/nix-dots/scripts/update-pkgs.sh";
         generations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
         vi = "nvim";
         vim = "nvim";

@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    "./programs"
-    "./services"
-  ];
+  imports = [ ./programs ./services ];
 }

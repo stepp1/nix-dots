@@ -48,7 +48,6 @@
       gnome.dconf-editor
       gnomeExtensions.pop-shell
     ];
-
   };
 
   programs = {
@@ -82,6 +81,7 @@
       enableCompletion = true;
       completionInit = "autoload -U compinit && compinit";
     };
+    # dconf.enable = true;
   };
 
   services.gpg-agent = {

@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./zfs.nix
-      ../hosts.nix
+      ../default.nix
     ];
 
   # Bootloader.
@@ -27,7 +27,7 @@
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = false;
     desktopManager.gnome.enable = true;
-    xserver.videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
 
     layout = "us";
     xkbVariant = "";

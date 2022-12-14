@@ -1,8 +1,8 @@
 { inputs, lib, config, pkgs, ... }:
+
 {
   imports = [
-    ./programs.nix
-    ./services.nix
+    ./modules
   ];
 
   home = {
@@ -23,7 +23,6 @@
       gnome.gnome-tweaks
       dconf
       gnome.dconf-editor
-      # gnomeExtensions.pop-shell
     ];
   };
 
@@ -33,8 +32,11 @@
       desktop = "\$HOME/";
       documents = "\$HOME/Documents";
       download = "\$HOME/Downloads";
-      pictures = "\$HOME/Documents";
-      videos = "\$HOME/Documents";
+      music = "\$HOME/";
+      templates = "\$HOME/";
+      pictures = "\$HOME/";
+      videos = "\$HOME/";
+
     };
   };
 

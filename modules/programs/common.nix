@@ -1,7 +1,7 @@
 { config, pkgs, self, ... }:
 
 {
-  imports = [ ./zsh.nix ./git.nix ];
+  imports = [ ./zsh.nix ];
   programs = {
     home-manager.enable = true;
     gpg.enable = true;

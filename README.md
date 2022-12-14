@@ -11,8 +11,8 @@ git clone https://github.com/stepp1/nix-dots.git nix-dots
 ```bash
 cd nix-dots
 # Update packages and lock file (optional)
-nix flake update
-nix flake lock
+nix flake update & nix flake lock
+# On future updates just run the `update-flake` commmand
 
 # Update config
 sudo nixos-rebuild switch --flake .#

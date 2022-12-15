@@ -1,8 +1,31 @@
-{ config, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports = [
-    ./base.nix # base config: LOCALE, TIMEZONE, SOUND, NIX cfg, etc.
-    ./common.nix # common config: bare minimum pkgs, etc.
+    ./base.nix
   ];
+
+  environment.systemPackages = with pkgs; [
+    # system
+    vim
+    wget
+    # git
+    xsel
+    xclip
+    home-manager
+    nixpkgs-fmt
+    zip
+    cached-nix-shell
+    cachix
+    zoom-us # covid :(
+  ];
+
+  # Enable the OpenSSH daemon
+  services.openssh = {
+    enable = true;
+    # Forbid root login through SSH.
+    permitRootLogin = "no";
+    # Use keys only. Remove if you want to SSH using password (not recommended)
+    # passwordAuthentication = false;
+  };
 }

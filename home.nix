@@ -13,6 +13,7 @@ in
     homeDirectory = "/home/step";
     packages = with pkgs; [
       # general
+      git
       tree
       htop
       tmux

@@ -88,11 +88,14 @@
   system.activationScripts = {
     # symlink .ssh/directory
     ssh-dir = ''
-      # git-crypt unlock
+      # assumes unlocked git-crypt
+      # /home/step/.ssh/ exists, then exit
+      if [ -d /home/step/.ssh/ ]; then echo ".ssh exists!"; exit; fi
+
+      echo "copying .ssh"
       mkdir -p /home/step/.ssh
       cp /home/step/nix-dots/.secrets/zen/ssh/* /home/step/.ssh/
       chown step:users /home/step/.ssh
-      # git-crypt lock
     '';
   };
 

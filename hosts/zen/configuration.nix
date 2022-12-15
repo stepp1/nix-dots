@@ -22,6 +22,7 @@
 
   # Configure keymap in X11
   nixpkgs.config.allowUnfree = true; # make sure...
+
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -84,6 +85,16 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  system.activationScripts = {
+    # symlink .ssh/directory
+    ssh-dir = ''
+      # git-crypt unlock
+      mkdir -p /home/step/.ssh
+      cp /home/step/nix-dots/.secrets/zen/ssh/* /home/step/.ssh/
+      chown step:users /home/step/.ssh
+      # git-crypt lock
+    '';
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -94,3 +105,4 @@
   system.stateVersion = "22.11"; # Did you read the comment?
 
 }
+

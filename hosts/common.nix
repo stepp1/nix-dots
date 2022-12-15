@@ -12,6 +12,7 @@
     nixpkgs-fmt
     zip
     cached-nix-shell
+    cachix
   ];
 
   # Enable the OpenSSH daemon

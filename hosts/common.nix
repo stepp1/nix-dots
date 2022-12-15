@@ -5,7 +5,7 @@
     # system
     vim
     wget
-    git
+    # git
     xsel
     xclip
     home-manager

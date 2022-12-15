@@ -8,7 +8,9 @@
     shellAliases = {
       ll = "ls -l";
       update = "~/nix-dots/bin/update.sh";
-      update-pkgs = "~/nix-dots/bin/update-pkgs.sh";
+      update-user = "~/nix-dots/bin/update-user.sh";
+      update-system = "~/nix-dots/bin/update-system.sh";
+      update-versions = "~/nix-dots/bin/update-versions.sh";
       hey = "~/nix-dots/bin/hey.sh";
       generations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
       vi = "nvim";

@@ -95,7 +95,11 @@
       echo "copying .ssh"
       mkdir -p /home/step/.ssh
       cp /home/step/nix-dots/.secrets/zen/ssh/* /home/step/.ssh/
-      chown step:users /home/step/.ssh
+      chown -R step:users /home/step/.ssh
+      
+      echo "Must set permissions! Run:"
+      echo "chmod 600 /home/step/.ssh/*"
+      echo "chmod 700 /home/step/.ssh"
     '';
   };
 

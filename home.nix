@@ -55,6 +55,6 @@ in
   };
 
   # release: https://nix-community.github.io/home-manager/release-notes.html
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 }
 

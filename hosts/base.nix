@@ -56,6 +56,17 @@
         "root"
         "step"
       ];
+      substituters = [
+        "https://cache.nixos.org"
+        "https://cache.nixos.org/"
+        "https://pre-commit-hooks.cachix.org"
+        "https://cuda-maintainers.cachix.org"
+      ];
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "pre-commit-hooks.cachix.org-1:Pkk3Panw5AW24TOv6kz3PvLhlH8puAsJTBbOPmBo7Rc="
+        "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      ];
     };
   };
 }

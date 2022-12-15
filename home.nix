@@ -1,5 +1,8 @@
 { inputs, lib, config, pkgs, ... }:
-
+let
+  mnt-home = "/mnt/data/home";
+  host = config.networking.hostName;
+in
 {
   imports = [
     ./modules
@@ -24,6 +27,17 @@
       dconf
       gnome.dconf-editor
     ];
+
+    file = {
+      Documents.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Documents";
+      Documents.target = "Documents";
+
+      Personal.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Personal";
+      Personal.target = "Personal";
+
+      Code.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Code";
+      Code.target = "Code";
+    };
   };
 
   xdg = {
@@ -43,3 +57,4 @@
   # release: https://nix-community.github.io/home-manager/release-notes.html
   home.stateVersion = "22.05";
 }
+

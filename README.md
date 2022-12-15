@@ -24,16 +24,16 @@ chmod +x ./bin/update.sh
 │   ├── update-user.sh
 │   └── update-versions.sh
 ├── flake.lock
-├── flake.nix # defines nixosConfigurations and homeConfigurations
-├── home.nix  # one user to rule them all
-├── hosts     # currently defined hosts
-│   ├── base.nix
-│   ├── common.nix
-│   ├── default.nix
+├── flake.nix       # defines nixosConfigurations and homeConfigurations
+├── home.nix        # one user to rule them all
+├── hosts           # currently defined hosts
+│   ├── base.nix    # base configuration: nix, nixpkgs, some basic services, locale, etc.
+│   ├── common.nix  # commong packages and services
+│   ├── default.nix # imports
 │   ├── ids
 │   ├── x13
 │   └── zen
-│       ├── configuration.nix
+│       ├── configuration.nix   # defines boot, network, xserver, user, **nix only** packages/programs
 │       ├── hardware-configuration.nix
 │       ├── README.md
 │       └── zfs.nix

@@ -11,7 +11,7 @@
       update-user = "~/nix-dots/bin/update-user.sh";
       update-system = "~/nix-dots/bin/update-system.sh";
       update-versions = "~/nix-dots/bin/update-versions.sh";
-      hey = "~/nix-dots/bin/hey.sh";
+      hey = "~/nix-dots/bin/hey";
       generations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
       vi = "nvim";
       vim = "nvim";

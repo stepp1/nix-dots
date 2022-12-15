@@ -20,6 +20,7 @@
     {
       nixosConfigurations = {
         zen = nixos-sys {
+          # inherit pkgs; <--- dont add! Causes unfree issues
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           # > Our main nixos configuration file <
           modules = [ ./hosts/zen/configuration.nix ];

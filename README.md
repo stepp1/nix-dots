@@ -12,6 +12,16 @@ chmod +x ./bin/update.sh
 ./update.sh
 ```
 
+## Status
+
+- [x] Flake support
+- [x] Custom scripts for updating
+- [x] Basic Gnome desktop
+- [x] ZFS disk mounted 
+- [ ] BSPWM desktop
+- [ ] Asus X13 configuration: asusctl, power management, etc.
+- [ ] IDS workstation configuration: similar to zen host, maybe only change disks?
+
 ## Structure
 
 ```

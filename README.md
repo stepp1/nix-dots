@@ -6,7 +6,6 @@
 git clone https://github.com/stepp1/nix-dots.git nix-dots
 cd nix-dots
 
-
 chmod +x ./bin/update.sh
 
 # check that hostname and $USER exist in flakes.nix and hosts/

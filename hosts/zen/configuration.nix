@@ -28,12 +28,14 @@
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = false;
     desktopManager.gnome.enable = true;
+
     videoDrivers = [ "nvidia" ];
 
     layout = "us";
     xkbVariant = "";
     xkbOptions = "compose:ralt";
   };
+  hardware.opengl.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -44,7 +46,7 @@
     description = "step";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    packages = (with pkgs; [
       # productivity
       firefox
       tdesktop
@@ -54,12 +56,48 @@
       vscode.fhs
       conda
       black
-    ];
+    ] ++ [
+      gnomeExtensions.vitals
+      gnomeExtensions.zfs-status-monitor
+      gnomeExtensions.clipboard-indicator
+      gnomeExtensions.no-overview
+      gnomeExtensions.tiling-assistant
+      xbindkeys # xbindkeys-config
+      xdotool
+    ]);
   };
 
-  hardware.opengl.enable = true;
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    baobab # disk usage analyzer
+    cheese # photo booth
+    eog # image viewer
+    epiphany # web browser
+    gedit # text editor
+    totem # video player
+    yelp
+    geary # email client
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    pkgs.gnome-photos
+    pkgs.gnome-connections
 
-  # $ nix search wget
+    # simple-scan # document scanner
+    # evince # document viewer
+    # file-roller # archive manager
+    # seahorse # password manager
+    # gnome-calculator
+    # gnome-calendar
+    # gnome-screenshot
+    # gnome-system-monitor
+    # gnome-weather
+    # gnome-disk-utility
+  ];
+
   environment.shells = with pkgs; [ zsh ];
   environment.variables = {
     EDITOR = "nvim";
@@ -85,22 +123,23 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  system.activationScripts = {
+  system.userActivationScripts = {
     # symlink .ssh/directory
-    ssh-dir = ''
-      # assumes unlocked git-crypt
-      # /home/step/.ssh/ exists, then exit
-      if [ -d /home/step/.ssh/ ]; then echo ".ssh exists!"; exit; fi
+    ssh-dir =
+      ''
+        # assumes unlocked git-crypt
+        # /home/step/.ssh/ exists, then exit
+        if [ -d /home/step/.ssh/ ]; then echo ".ssh exists!"; exit; fi
 
-      echo "copying .ssh"
-      mkdir -p /home/step/.ssh
-      cp /home/step/nix-dots/.secrets/zen/ssh/* /home/step/.ssh/
-      chown -R step:users /home/step/.ssh
-      
-      echo "Must set permissions! Run:"
-      echo "chmod 600 /home/step/.ssh/*"
-      echo "chmod 700 /home/step/.ssh"
-    '';
+        echo "copying .ssh"
+        mkdir -p /home/step/.ssh
+        cp /home/step/nix-dots/.secrets/zen/ssh/* /home/step/.ssh/
+        chown -R step:users /home/step/.ssh
+     
+        echo "Must set permissions! Run:"
+        echo "chmod 600 /home/step/.ssh/*"
+        echo "chmod 700 /home/step/.ssh"
+      '';
   };
 
   # This value determines the NixOS release from which the default
@@ -112,4 +151,5 @@
   system.stateVersion = "22.11"; # Did you read the comment?
 
 }
+
 

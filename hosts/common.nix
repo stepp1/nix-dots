@@ -13,6 +13,7 @@
     zip
     cached-nix-shell
     cachix
+    zoom-us # covid :(
   ];
 
   # Enable the OpenSSH daemon

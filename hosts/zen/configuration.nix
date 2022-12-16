@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./zfs.nix
       ../default.nix
+      ../gnome.nix
     ];
 
   # Bootloader.
@@ -25,10 +26,6 @@
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
-    desktopManager.gnome.enable = true;
-
     videoDrivers = [ "nvidia" ];
 
     layout = "us";
@@ -56,47 +53,10 @@
       vscode.fhs
       conda
       black
-    ] ++ [
-      gnomeExtensions.vitals
-      gnomeExtensions.zfs-status-monitor
-      gnomeExtensions.clipboard-indicator
-      gnomeExtensions.no-overview
-      gnomeExtensions.tiling-assistant
-      xbindkeys # xbindkeys-config
-      xdotool
     ]);
   };
 
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab # disk usage analyzer
-    cheese # photo booth
-    eog # image viewer
-    epiphany # web browser
-    gedit # text editor
-    totem # video player
-    yelp
-    geary # email client
-    gnome-characters
-    gnome-clocks
-    gnome-contacts
-    gnome-font-viewer
-    gnome-logs
-    gnome-maps
-    gnome-music
-    pkgs.gnome-photos
-    pkgs.gnome-connections
 
-    # simple-scan # document scanner
-    # evince # document viewer
-    # file-roller # archive manager
-    # seahorse # password manager
-    # gnome-calculator
-    # gnome-calendar
-    # gnome-screenshot
-    # gnome-system-monitor
-    # gnome-weather
-    # gnome-disk-utility
-  ];
 
   environment.shells = with pkgs; [ zsh ];
   environment.variables = {

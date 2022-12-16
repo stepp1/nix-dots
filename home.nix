@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, home-manager, ... }:
 let
   mnt-home = "/mnt/data/home";
   host = config.networking.hostName;
@@ -12,7 +12,6 @@ in
     username = "step";
     homeDirectory = "/home/step";
     packages = with pkgs; [
-      # general
       git
       tree
       htop
@@ -22,20 +21,13 @@ in
       gnupg
       git-crypt
       pinentry-gnome
-
-      # gnome
-      gnome.gnome-tweaks
       dconf
-      gnome.dconf-editor
     ];
-
     file = {
       Documents.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Documents";
       Documents.target = "Documents";
-
       Personal.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Personal";
       Personal.target = "Personal";
-
       Code.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Code";
       Code.target = "Code";
     };

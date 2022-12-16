@@ -11,7 +11,7 @@ gpg --list-secret-keys
 # Export the public key
 gpg --output ../public.gpg --armor --export sfaragg@gmail.com
 # Export the private key
-gpg --output ../public.gpg --armor --export-secret-keys sfaragg@gmail.com
+gpg --output ../private.gpg --armor --export-secret-keys sfaragg@gmail.com
 # Trust the key
 gpg --edit-key # Trust level 5
 ```

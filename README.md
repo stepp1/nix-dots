@@ -64,5 +64,12 @@ chmod +x ./bin/update.sh
 ```
 
 
-## Related
+## References
 - How to manage secrets (e.g. ssh keys)? See [SECRETS.md](SECRETS.md)
+- HomeManager Manual: https://rycee.gitlab.io/home-manager/ (See 3.3. NixOS module) 
+- Some dots, flakes that I used or got inspired by:
+    - https://github.com/gvolpe/dconf2nix
+    - https://github.com/hlissner/dotfiles
+    - https://github.com/chayward1/dotfiles
+    - https://github.com/notusknot/dotfiles-nix
+    - many others that I could'nt keep that...

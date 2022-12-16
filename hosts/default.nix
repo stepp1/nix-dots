@@ -15,6 +15,7 @@
     home-manager
     nixpkgs-fmt
     zip
+    unzip
     cached-nix-shell
     cachix
     zoom-us # covid :(

@@ -20,6 +20,8 @@
     appindicator
     dash-to-dock
     extension-list
+    transparent-shell
+    caffeine
     # 
   ]);
   environment.gnome.excludePackages = with pkgs.gnome;

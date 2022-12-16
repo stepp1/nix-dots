@@ -162,7 +162,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "tiling-assistant@leleat-on-github" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "dash-to-dock@micxgx.gmail.com" "extension-list@tu.berry" "transparent-shell@siroj42.github.io" ];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "tiling-assistant@leleat-on-github" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "dash-to-dock@micxgx.gmail.com" "extension-list@tu.berry" "transparent-shell@siroj42.github.io" "caffeine@patapon.info" ];
       favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
       welcome-dialog-last-shown-version = "43.1";
     };
@@ -178,6 +178,12 @@ with lib.hm.gvariant;
       preview-size-scale = 0.13;
       show-show-apps-button = true;
       show-trash = false;
+    };
+
+    "org/gnome/shell/extensions/extension-list" = {
+      button-icon = mkUint32 0;
+      toggle-unpin = false;
+      unpin-list = [ "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "window-list@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "drive-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" "auto-move-windows@gnome-shell-extensions.gcampax.github.com" ];
     };
 
     "org/gnome/shell/extensions/transparent-shell" = {
@@ -198,7 +204,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/weather" = {
       automatic-location = true;
-      locations = "[<(uint32 2, <('Santiago', 'SCEL', true, [(-0.58264907613967609, -1.2354022163855554)], [(-0.58381263479210321, -1.2333660105604238)])>)>]";
+      locations = "@av []";
     };
 
     "org/gnome/shell/world-clocks" = {

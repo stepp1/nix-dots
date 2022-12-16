@@ -19,6 +19,7 @@ with lib.hm.gvariant;
       window-size = mkTuple [ 768 600 ];
     };
 
+
     "org/gnome/control-center" = {
       last-panel = "keyboard";
       window-state = mkTuple [ 980 640 ];
@@ -80,6 +81,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
+      maximize = [ ];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
@@ -88,6 +90,7 @@ with lib.hm.gvariant;
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
       switch-to-workspace-4 = [ "<Super>4" ];
+      unmaximize = [ ];
     };
 
     "org/gnome/evolution-data-server" = {
@@ -97,9 +100,14 @@ with lib.hm.gvariant;
     "org/gnome/mutter" = {
       attach-modal-dialogs = true;
       dynamic-workspaces = true;
-      edge-tiling = true;
+      edge-tiling = false;
       focus-change-on-pointer-rest = true;
       workspaces-only-on-primary = true;
+    };
+
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = [ ];
+      toggle-tiled-right = [ ];
     };
 
     "org/gnome/nautilus/preferences" = {
@@ -124,12 +132,28 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell" = {
-      favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
+      disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "tiling-assistant@leleat-on-github" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "dash-to-dock@micxgx.gmail.com" "extension-list@tu.berry" ];
+      favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
       welcome-dialog-last-shown-version = "43.1";
     };
 
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      background-opacity = 0.8;
+      dash-max-icon-size = 32;
+      dock-position = "BOTTOM";
+      height-fraction = 0.77;
+      preferred-monitor = -2;
+      preferred-monitor-by-connector = "DP-0";
+      show-trash = false;
+    };
+
     "org/gnome/shell/keybindings" = {
-      switch-to-application-3 = [];
+      switch-to-application-3 = [ ];
+    };
+
+    "org/gnome/shell/overrides" = {
+      edge-tiling = false;
     };
 
     "org/gnome/shell/world-clocks" = {

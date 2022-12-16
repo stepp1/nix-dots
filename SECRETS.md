@@ -28,14 +28,16 @@ git-crypt export-key ../git-crypt.key
 
 - **Committing + Lock and Unlock**
 ```bash
-# Always unlock before commiting
+# Unlock before commiting
 git-crypt unlock 
-# Do some stuff
-...
-# git add, commit
-git add file1 file2
-git commit -m "..."
 
-# Lock after commiting
+# Do some stuff
+touch  file1 file2
+
+# git add some files
+git add file1 file2
+
+# Lock before commiting <--- IMPORTANT
 git-crypt lock 
+git commit -m "..."
 ```

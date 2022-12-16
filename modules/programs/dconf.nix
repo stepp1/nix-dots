@@ -6,15 +6,11 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     "ca/desrt/dconf-editor" = {
-      saved-pathbar-path = "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2";
-      saved-view = "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2";
-      window-height = 929;
+      saved-pathbar-path = "/org/gnome/shell/favorite-apps";
+      saved-view = "/org/gnome/shell/favorite-apps";
+      window-height = 500;
       window-is-maximized = false;
-      window-width = 1927;
-    };
-
-    "org/gnome/Weather" = {
-      locations = "[<(uint32 2, <('Santiago', 'SCEL', true, [(-0.58264907613967609, -1.2354022163855554)], [(-0.58381263479210321, -1.2333660105604238)])>)>]";
+      window-width = 540;
     };
 
     "org/gnome/calendar" = {
@@ -23,12 +19,8 @@ with lib.hm.gvariant;
       window-size = mkTuple [ 768 600 ];
     };
 
-    "org/gnome/cheese" = {
-      burst-delay = 1000;
-    };
-
     "org/gnome/control-center" = {
-      last-panel = "keyboard";
+      last-panel = "multitasking";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -59,7 +51,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "code" "firefox" "gnome-power-panel" "org-gnome-calendar" "org-gnome-console" "steam" "org-gnome-shell-extensions" ];
+      application-children = [ "code" "firefox" "gnome-power-panel" "org-gnome-calendar" "org-gnome-console" "steam" ];
     };
 
     "org/gnome/desktop/notifications/application/code" = {
@@ -82,17 +74,13 @@ with lib.hm.gvariant;
       application-id = "org.gnome.Console.desktop";
     };
 
-    "org/gnome/desktop/notifications/application/org-gnome-shell-extensions" = {
-      application-id = "org.gnome.Shell.Extensions.desktop";
-    };
-
     "org/gnome/desktop/notifications/application/steam" = {
       application-id = "steam.desktop";
     };
 
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
-      maximize = [];
+      maximize = [ ];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
@@ -101,25 +89,11 @@ with lib.hm.gvariant;
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
       switch-to-workspace-4 = [ "<Super>4" ];
-      unmaximize = [];
+      unmaximize = [ ];
     };
 
     "org/gnome/evolution-data-server" = {
       migrated = true;
-    };
-
-    "org/gnome/file-roller/listing" = {
-      list-mode = "as-folder";
-      name-column-width = 250;
-      show-path = false;
-      sort-method = "name";
-      sort-type = "ascending";
-    };
-
-    "org/gnome/file-roller/ui" = {
-      sidebar-width = 200;
-      window-height = 480;
-      window-width = 600;
     };
 
     "org/gnome/mutter" = {
@@ -131,23 +105,23 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/mutter/keybindings" = {
-      toggle-tiled-left = [];
-      toggle-tiled-right = [];
-    };
-
-    "org/gnome/nautilus/compression" = {
-      default-compression-format = "zip";
+      toggle-tiled-left = [ ];
+      toggle-tiled-right = [ ];
     };
 
     "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "list-view";
+      default-folder-viewer = "icon-view";
       migrated-gtk-settings = true;
       search-filter-time-type = "last_modified";
       search-view = "list-view";
     };
 
     "org/gnome/nautilus/window-state" = {
-      initial-size = mkTuple [ 1280 1408 ];
+      initial-size = mkTuple [ 890 550 ];
+    };
+
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -161,22 +135,19 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell" = {
-      disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "tiling-assistant@leleat-on-github" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "dash-to-dock@micxgx.gmail.com" "extension-list@tu.berry" "transparent-shell@siroj42.github.io" "caffeine@patapon.info" ];
+      disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "dash-to-dock@micxgx.gmail.com" ];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "tiling-assistant@leleat-on-github" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "extension-list@tu.berry" ];
       favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
       welcome-dialog-last-shown-version = "43.1";
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       background-opacity = 0.8;
-      dash-max-icon-size = 24;
+      dash-max-icon-size = 32;
       dock-position = "BOTTOM";
-      height-fraction = 0.54;
-      hot-keys = false;
+      height-fraction = 0.77;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "DP-0";
-      preview-size-scale = 0.13;
-      show-show-apps-button = true;
       show-trash = false;
     };
 
@@ -186,33 +157,20 @@ with lib.hm.gvariant;
       unpin-list = [ "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "window-list@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "drive-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" "auto-move-windows@gnome-shell-extensions.gcampax.github.com" ];
     };
 
-    "org/gnome/shell/extensions/transparent-shell" = {
-      dash = false;
-      search = false;
-    };
-
     "org/gnome/shell/keybindings" = {
-      switch-to-application-1 = [];
-      switch-to-application-2 = [];
-      switch-to-application-3 = [];
-      switch-to-application-4 = [];
+      switch-to-application-1 = [ "" ];
+      switch-to-application-2 = [ "" ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ "" ];
+      switch-to-application-5 = [ "" ];
     };
 
     "org/gnome/shell/overrides" = {
       edge-tiling = false;
     };
 
-    "org/gnome/shell/weather" = {
-      automatic-location = true;
-      locations = "@av []";
-    };
-
     "org/gnome/shell/world-clocks" = {
       locations = "@av []";
-    };
-
-    "org/gtk/gtk4/settings/file-chooser" = {
-      show-hidden = false;
     };
 
     "org/gtk/settings/file-chooser" = {

@@ -11,6 +11,7 @@
     gnome.gnome-tweaks
     xdotool
     xbindkeys
+    dropbox
   ]) ++ (with pkgs.gnomeExtensions; [
     vitals
     zfs-status-monitor
@@ -22,6 +23,13 @@
     extension-list
     transparent-shell
     caffeine
+    no-activities-button
+    wifi-qrcode
+    x11-gestures
+    bluetooth-quick-connect
+    # asusctl-gex
+    # supergfxctl--gex
+    # pop-shell
     # 
   ]);
   environment.gnome.excludePackages = with pkgs.gnome;

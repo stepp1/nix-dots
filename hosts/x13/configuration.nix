@@ -12,7 +12,7 @@
       ./x13.nix
       ../default.nix
       ../gnome.nix
-      ../power.nix
+      ./power.nix
     ];
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;

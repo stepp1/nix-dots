@@ -8,19 +8,20 @@
   imports =
     [
       ./hardware-configuration.nix
-      #  ./zfs.nix
+      ./zfs.nix
       ./x13.nix
       ../default.nix
       ../gnome.nix
+      ../power.nix
     ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  #boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
   # https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
   # https://gist.github.com/ladinu/bfebdd90a5afd45dec811296016b2a3f
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.zfs.extraPools = [ "MyData" ];
+  boot.zfs.extraPools = [ "MyData" ];
 
   networking.hostName = "x13";
   sound.enable = true;
@@ -47,6 +48,7 @@
     gnomeExtensions.upower-battery
     gnomeExtensions.appindicator
     asusctl
+    filelight
     # cpupower-gui
   ];
 

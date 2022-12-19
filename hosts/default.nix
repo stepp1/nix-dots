@@ -5,11 +5,28 @@
     ./base.nix
   ];
 
+  users.users.step = {
+    isNormalUser = true;
+    description = "step";
+    shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      firefox
+      thunderbird
+      tdesktop
+      discord
+
+      # dev
+      vscode.fhs
+      conda
+      black
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     # system
     vim
     wget
-    # git
     xsel
     xclip
     home-manager
@@ -28,5 +45,13 @@
     permitRootLogin = "no";
     # Use keys only. Remove if you want to SSH using password (not recommended)
     # passwordAuthentication = false;
+  };
+  programs.noisetorch.enable = true;
+
+  environment.shells = with pkgs; [ zsh ];
+  environment.variables = {
+    EDITOR = "nvim";
+    BROWSER = "firefox";
+    HOST = "zen";
   };
 }

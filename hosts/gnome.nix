@@ -2,10 +2,12 @@
 
 {
   services.xserver = {
+    enable = true;
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    # displayManager.gdm.wayland = false;
     desktopManager.gnome.enable = true;
   };
+
   environment.systemPackages = (with pkgs; [
     gnome.dconf-editor
     gnome.gnome-tweaks
@@ -13,7 +15,6 @@
     xbindkeys
   ]) ++ (with pkgs.gnomeExtensions; [
     vitals
-    zfs-status-monitor
     clipboard-indicator
     no-overview
     tiling-assistant
@@ -29,7 +30,7 @@
       baobab # disk usage analyzer
       cheese # photo booth
       eog # image viewer
-      epiphany # web browser
+      # epiphany # web browser
       gedit # text editor
       totem # video player
       yelp

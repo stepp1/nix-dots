@@ -1,6 +1,8 @@
 # Edit this configuration file to define what should be installed on 
 # your system.  Help is available in the configuration.nix(5) man page 
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+# https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
+# https://gist.github.com/ladinu/bfebdd90a5afd45dec811296016b2a3f
 
 { config, pkgs, ... }:
 
@@ -16,10 +18,8 @@
     ];
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-  # https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
-  # https://gist.github.com/ladinu/bfebdd90a5afd45dec811296016b2a3f
-  # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 8;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.zfs.extraPools = [ "MyData" ];
 
@@ -49,7 +49,6 @@
     gnomeExtensions.appindicator
     asusctl
     filelight
-    # cpupower-gui
   ];
 
   # Copy the NixOS configuration file and link it from the resulting system

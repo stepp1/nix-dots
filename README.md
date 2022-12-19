@@ -34,35 +34,41 @@ chmod +x ./bin/update.sh
 │   ├── update-user.sh
 │   └── update-versions.sh
 ├── flake.lock
-├── flake.nix       # defines nixosConfigurations and homeConfigurations
+├── flake.nix       # defines inputs and nixosConfigurations
 ├── home.nix        # one user to rule them all
-├── hosts           # currently defined hosts
-│   ├── base.nix    # base configuration: nix, nixpkgs, some basic services, locale, etc.
-│   ├── common.nix  # commong packages and services
-│   ├── default.nix # imports
-│   ├── ids
+├── hosts           # my hosts
+│   ├── base.nix    # base configuration: nix, nixpkgs, some basic services, locale, etc.
+│   ├── default.nix # default configurations: common packages, services, etc.
+│   ├── gnome.nix   # gnome desktop
+│   ├── ids
+│   │   └── README.md
 │   ├── x13
+│   │   ├── configuration.nix
+│   │   ├── hardware-configuration.nix
+│   │   ├── power.nix # power management
+│   │   ├── README.md
+│   │   ├── x13.nix   # x13 specific
+│   │   └── zfs.nix   # zfs partition
 │   └── zen
-│       ├── configuration.nix   # defines boot, network, xserver, user, **nix only** packages/programs
-│       ├── hardware-configuration.nix
-│       ├── README.md
-│       └── zfs.nix
+│       ├── configuration.nix
+│       ├── hardware-configuration.nix
+│       ├── README.md
+│       └── zfs.nix   # zfs partition
 ├── INSTALL.md
 ├── LICENSE
 ├── modules  # programs and services managed by home-manager
-│   ├── default.nix
-│   ├── modules.nix
-│   ├── programs
-│   │   ├── common.nix
-│   │   ├── default.nix
-│   │   ├── git.nix
-│   │   └── zsh.nix
-│   └── services
-│       └── default.nix
+│   ├── default.nix
+│   ├── modules.nix
+│   ├── programs
+│   │   ├── dconf.nix
+│   │   ├── default.nix
+│   │   ├── git.nix
+│   │   └── zsh.nix
+│   └── services
+│       └── default.nix
 ├── README.md  # this file
 └── SECRETS.md # instructions on how to manage secrets 
 ```
-
 
 ## References
 - How to manage secrets (e.g. ssh keys)? See [SECRETS.md](SECRETS.md)

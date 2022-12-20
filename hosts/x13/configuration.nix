@@ -21,7 +21,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 8;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.zfs.extraPools = [ "MyData" ];
+  # boot.zfs.extraPools = [ "MyData" ];
 
   networking.hostName = "x13";
   sound.enable = true;
@@ -51,6 +51,13 @@
     filelight
   ];
 
+  ## must be at the end! or it can cause race problems w/ zfs & udev
+  boot.initrd.luks.devices."root" = {
+    #name = "root";
+    device = "/dev/disk/by-uuid/0d934a78-c005-4fbb-8cb5-3b4deb360aee";
+    preLVM = true;
+    allowDiscards = true;
+  };
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.

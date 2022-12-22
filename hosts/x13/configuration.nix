@@ -25,7 +25,7 @@
 
   networking.hostName = "x13";
   sound.enable = true;
-
+  services.touchegg.enable = true;
   nixpkgs.overlays = [
     (self: super: {
       discord = super.discord.overrideAttrs
@@ -49,6 +49,9 @@
     gnomeExtensions.appindicator
     asusctl
     filelight
+    # distrobox
+    touchegg
+    easyeffects
   ];
 
   ## must be at the end! or it can cause race problems w/ zfs & udev

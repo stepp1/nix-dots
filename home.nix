@@ -31,8 +31,8 @@ in
       Code.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Code";
       Code.target = "Code";
       ".condarc".text = ''
-            	channels:
-        	    - conda-forge
+        channels:
+          - conda-forge
       '';
     };
   };

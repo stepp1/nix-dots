@@ -10,7 +10,7 @@
     powertop.enable = true;
     cpufreq.min = 1000000;
     cpufreq.max = 1800000;
-    cpuFreqGovernor = "ondemand";
+    cpuFreqGovernor = "schedutil";
   };
 
 

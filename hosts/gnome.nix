@@ -4,13 +4,14 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
   };
 
   environment.systemPackages = (with pkgs; [
     gnome.dconf-editor
     gnome.gnome-tweaks
+    gnome.gnome-terminal
     xdotool
     xbindkeys
     dropbox
@@ -30,7 +31,7 @@
     bluetooth-quick-connect
     # asusctl-gex
     supergfxctl-gex
-    # pop-shell
+    pop-shell
     # 
   ]);
   environment.gnome.excludePackages = with pkgs.gnome;

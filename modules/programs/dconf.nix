@@ -733,138 +733,137 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      t
-        };
-
-        "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
-        email = [ "<Super>e" ];
-        home = [ "<Super>n" ];
-        rotate-video-lock-static = [ ];
-        screensaver = [ "<Super>Escape" ];
-        terminal = [ "<Super>t" ];
-        www = [ "<Super>w" ];
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "";
-        command = "kgx";
-        name = "terminal";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        binding = "<Super>Return";
-        command = "gnome-terminal";
-        name = "terminal";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-        binding = "Launch1";
-        command = "asusctl --next-kbd-bright";
-        name = "keyboard-bg";
-      };
-
-      "org/gnome/shell" = {
-        disable-user-extensions = false;
-        disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "tiling-assistant@leleat-on-github" "dash-to-dock@micxgx.gmail.com" ];
-        enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "extension-list@tu.berry" "pop-shell@system76.com" "supergfxctl-gex@asus-linux.org" ];
-        favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
-        last-selected-power-profile = "power-saver";
-        welcome-dialog-last-shown-version = "43.1";
-      };
-
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        background-opacity = 0.8;
-        dash-max-icon-size = 32;
-        dock-position = "BOTTOM";
-        height-fraction = 0.77;
-        preferred-monitor = -2;
-        preferred-monitor-by-connector = "DP-0";
-        show-trash = false;
-      };
-
-      "org/gnome/shell/extensions/extension-list" = {
-        button-icon = mkUint32 0;
-        toggle-unpin = false;
-        unpin-list = [ "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "window-list@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "drive-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" "auto-move-windows@gnome-shell-extensions.gcampax.github.com" ];
-      };
-
-      "org/gnome/shell/extensions/pop-shell" = {
-        active-hint = false;
-        gap-inner = 8;
-        gap-outer = 8;
-        show-title = false;
-        snap-to-grid = false;
-        tile-by-default = true;
-        tile-enter = [ "" ];
-      };
-
-      "org/gnome/shell/extensions/tiling-assistant" = {
-        active-window-hint-color = "rgb(53,132,228)";
-        last-version-installed = 39;
-      };
-
-      "org/gnome/shell/keybindings" = {
-        focus-active-notification = [ ];
-        open-application-menu = [ ];
-        screenshot-window = [ "<Shift><Alt><Super>s" ];
-        show-screenshot-ui = [ "<Shift><Super>s" ];
-        switch-to-application-1 = [ "" ];
-        switch-to-application-2 = [ "" ];
-        switch-to-application-3 = [ ];
-        switch-to-application-4 = [ "" ];
-        switch-to-application-5 = [ "" ];
-        toggle-message-tray = [ "<Super>v" ];
-        toggle-overview = [ ];
-      };
-
-      "org/gnome/shell/weather" = {
-        automatic-location = true;
-        locations = "[<(uint32 2, <('Santiago', 'SCEL', true, [(-0.58264907613967609, -1.2354022163855554)], [(-0.58381263479210321, -1.2333660105604238)])>)>]";
-      };
-
-      "org/gnome/shell/world-clocks" = {
-        locations = "@av []";
-      };
-
-      "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
-        background-color = "rgb(23,20,33)";
-        foreground-color = "rgb(208,207,204)";
-        use-theme-colors = false;
-      };
-
-      "org/gnome/tweaks" = {
-        show-extensions-notice = false;
-      };
-
-      "org/gtk/gtk4/settings/file-chooser" = {
-        date-format = "regular";
-        location-mode = "path-bar";
-        show-hidden = false;
-        show-size-column = true;
-        show-type-column = true;
-        sidebar-width = 169;
-        sort-column = "name";
-        sort-directories-first = false;
-        sort-order = "ascending";
-        type-format = "category";
-        window-size = mkTuple [ 888 374 ];
-      };
-
-      "org/gtk/settings/file-chooser" = {
-        date-format = "regular";
-        location-mode = "path-bar";
-        show-hidden = false;
-        show-size-column = true;
-        show-type-column = true;
-        sidebar-width = 157;
-        sort-column = "name";
-        sort-directories-first = false;
-        sort-order = "ascending";
-        type-format = "category";
-        window-position = mkTuple [ 39 78 ];
-        window-size = mkTuple [ 1203 902 ];
-      };
-
     };
-  }
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+      email = [ "<Super>e" ];
+      home = [ "<Super>n" ];
+      rotate-video-lock-static = [ ];
+      screensaver = [ "<Super>Escape" ];
+      terminal = [ "<Super>t" ];
+      www = [ "<Super>w" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "";
+      command = "kgx";
+      name = "terminal";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>Return";
+      command = "gnome-terminal";
+      name = "terminal";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "Launch1";
+      command = "asusctl --next-kbd-bright";
+      name = "keyboard-bg";
+    };
+
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "tiling-assistant@leleat-on-github" "dash-to-dock@micxgx.gmail.com" ];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "extension-list@tu.berry" "pop-shell@system76.com" "supergfxctl-gex@asus-linux.org" ];
+      favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
+      last-selected-power-profile = "power-saver";
+      welcome-dialog-last-shown-version = "43.1";
+    };
+
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      background-opacity = 0.8;
+      dash-max-icon-size = 32;
+      dock-position = "BOTTOM";
+      height-fraction = 0.77;
+      preferred-monitor = -2;
+      preferred-monitor-by-connector = "DP-0";
+      show-trash = false;
+    };
+
+    "org/gnome/shell/extensions/extension-list" = {
+      button-icon = mkUint32 0;
+      toggle-unpin = false;
+      unpin-list = [ "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "window-list@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "drive-menu@gnome-shell-extensions.gcampax.github.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" "auto-move-windows@gnome-shell-extensions.gcampax.github.com" ];
+    };
+
+    "org/gnome/shell/extensions/pop-shell" = {
+      active-hint = false;
+      gap-inner = 8;
+      gap-outer = 8;
+      show-title = false;
+      snap-to-grid = false;
+      tile-by-default = true;
+      tile-enter = [ "" ];
+    };
+
+    "org/gnome/shell/extensions/tiling-assistant" = {
+      active-window-hint-color = "rgb(53,132,228)";
+      last-version-installed = 39;
+    };
+
+    "org/gnome/shell/keybindings" = {
+      focus-active-notification = [ ];
+      open-application-menu = [ ];
+      screenshot-window = [ "<Shift><Alt><Super>s" ];
+      show-screenshot-ui = [ "<Shift><Super>s" ];
+      switch-to-application-1 = [ "" ];
+      switch-to-application-2 = [ "" ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ "" ];
+      switch-to-application-5 = [ "" ];
+      toggle-message-tray = [ "<Super>v" ];
+      toggle-overview = [ ];
+    };
+
+    "org/gnome/shell/weather" = {
+      automatic-location = true;
+      locations = "[<(uint32 2, <('Santiago', 'SCEL', true, [(-0.58264907613967609, -1.2354022163855554)], [(-0.58381263479210321, -1.2333660105604238)])>)>]";
+    };
+
+    "org/gnome/shell/world-clocks" = {
+      locations = "@av []";
+    };
+
+    "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
+      background-color = "rgb(23,20,33)";
+      foreground-color = "rgb(208,207,204)";
+      use-theme-colors = false;
+    };
+
+    "org/gnome/tweaks" = {
+      show-extensions-notice = false;
+    };
+
+    "org/gtk/gtk4/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 169;
+      sort-column = "name";
+      sort-directories-first = false;
+      sort-order = "ascending";
+      type-format = "category";
+      window-size = mkTuple [ 888 374 ];
+    };
+
+    "org/gtk/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 157;
+      sort-column = "name";
+      sort-directories-first = false;
+      sort-order = "ascending";
+      type-format = "category";
+      window-position = mkTuple [ 39 78 ];
+      window-size = mkTuple [ 1203 902 ];
+    };
+
+  };
+}

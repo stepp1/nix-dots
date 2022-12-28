@@ -19,8 +19,21 @@
     cached-nix-shell
     cachix
     zoom-us # covid :(
+    filelight
+    discord
   ];
-
+  programs.noisetorch.enable = true;
+  nixpkgs.overlays = [
+    (self: super: {
+      discord = super.discord.overrideAttrs
+        (_: {
+          src = builtins.fetchTarball {
+            url = "https://discord.com/api/download?platform=linux&format=tar.gz";
+            sha256 = "1z980p3zmwmy29cdz2v8c36ywrybr7saw8n0w7wlb74m63zb9gpi";
+          };
+        });
+    })
+  ];
   # Enable the OpenSSH daemon
   services.openssh = {
     enable = true;

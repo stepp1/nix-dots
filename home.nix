@@ -13,6 +13,7 @@ in
     homeDirectory = "/home/step";
     packages = with pkgs; [
       git
+      git-lfs
       tree
       htop
       tmux
@@ -22,6 +23,7 @@ in
       git-crypt
       pinentry-gnome
       dconf
+      gnome.gnome-terminal
     ];
     file = {
       Documents.source = config.lib.file.mkOutOfStoreSymlink "${mnt-home}/Documents";
@@ -32,7 +34,7 @@ in
       Code.target = "Code";
     };
   };
-
+  programs.git.lfs.enable = true;
   xdg = {
     userDirs = {
       enable = true;

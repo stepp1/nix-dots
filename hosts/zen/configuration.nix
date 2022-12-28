@@ -21,50 +21,18 @@
   networking.hostName = "zen";
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
 
-  # Configure keymap in X11
   nixpkgs.config.allowUnfree = true; # make sure...
 
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-
     layout = "us";
     xkbVariant = "";
     xkbOptions = "compose:ralt";
   };
   hardware.opengl.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.step = {
-    isNormalUser = true;
-    description = "step";
-    shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = (with pkgs; [
-      # productivity
-      firefox
-      tdesktop
-      whatsapp-for-linux
-
-      # dev
-      vscode.fhs
-      conda
-      black
-    ]);
-  };
-
-
-
-  environment.shells = with pkgs; [ zsh ];
-  environment.variables = {
-    EDITOR = "nvim";
-    BROWSER = "firefox";
-    HOST = "zen";
-  };
-
   programs = {
     steam.enable = true;
     gamemode.enable = true;

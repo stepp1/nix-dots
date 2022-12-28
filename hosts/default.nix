@@ -5,11 +5,28 @@
     ./base.nix
   ];
 
+  users.users.step = {
+    isNormalUser = true;
+    description = "step";
+    shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      firefox
+      thunderbird
+      tdesktop
+      discord
+
+      # dev
+      vscode.fhs
+      conda
+      black
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     # system
     vim
     wget
-    # git
     xsel
     xclip
     home-manager
@@ -21,8 +38,10 @@
     zoom-us # covid :(
     filelight
     discord
+    autossh
   ];
   programs.noisetorch.enable = true;
+
   nixpkgs.overlays = [
     (self: super: {
       discord = super.discord.overrideAttrs
@@ -41,5 +60,25 @@
     permitRootLogin = "no";
     # Use keys only. Remove if you want to SSH using password (not recommended)
     # passwordAuthentication = false;
+  };
+
+
+  environment.shells = with pkgs; [ zsh ];
+  environment.variables = {
+    EDITOR = "nvim";
+    BROWSER = "firefox";
+    HOST = "zen";
+  };
+
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.dnsname.enable = true;
+    };
   };
 }

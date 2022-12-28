@@ -2,18 +2,21 @@
 
 {
   services.xserver = {
+    enable = true;
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
   };
+
   environment.systemPackages = (with pkgs; [
     gnome.dconf-editor
     gnome.gnome-tweaks
+    gnome.gnome-terminal
     xdotool
     xbindkeys
+    dropbox
   ]) ++ (with pkgs.gnomeExtensions; [
     vitals
-    zfs-status-monitor
     clipboard-indicator
     no-overview
     tiling-assistant
@@ -22,6 +25,13 @@
     extension-list
     transparent-shell
     caffeine
+    no-activities-button
+    wifi-qrcode
+    x11-gestures
+    bluetooth-quick-connect
+    # asusctl-gex
+    supergfxctl-gex
+    pop-shell
     # 
   ]);
   environment.gnome.excludePackages = with pkgs.gnome;
@@ -29,7 +39,7 @@
       baobab # disk usage analyzer
       cheese # photo booth
       eog # image viewer
-      epiphany # web browser
+      # epiphany # web browser
       gedit # text editor
       totem # video player
       yelp

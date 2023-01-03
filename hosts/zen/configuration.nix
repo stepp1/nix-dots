@@ -9,12 +9,13 @@
       ../gnome.nix
     ];
 
-  # Bootloader.
+  # Bootloader
   boot =
     {
       loader.systemd-boot.enable = true;
       loader.efi.canTouchEfiVariables = true;
       loader.efi.efiSysMountPoint = "/boot/efi";
+      kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
       zfs.extraPools = [ "MyData" ];
     };
 

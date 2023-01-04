@@ -34,6 +34,7 @@
     pop-shell
     # 
   ]);
+  services.gnome3.gnome-keyring.enable = true;
   environment.gnome.excludePackages = with pkgs.gnome;
     [
       baobab # disk usage analyzer

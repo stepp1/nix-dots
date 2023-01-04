@@ -314,6 +314,7 @@ with lib.hm.gvariant;
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
       ];
       email = [ "<Super>e" ];
       home = [ "<Super>n" ];
@@ -339,6 +340,12 @@ with lib.hm.gvariant;
       binding = "Launch1";
       command = "asusctl --next-kbd-bright";
       name = "keyboard-bg";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "Launch4";
+      command = "asusctl profile -n";
+      name = "asusctl profiles";
     };
 
     "org/gnome/shell" = {

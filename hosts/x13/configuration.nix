@@ -52,6 +52,7 @@
     # distrobox
     touchegg
     easyeffects
+    chromium # for google meets :/
   ];
 
   ## must be at the end! or it can cause race problems w/ zfs & udev

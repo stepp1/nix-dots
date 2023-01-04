@@ -3,7 +3,14 @@
 {
   services.auto-cpufreq.enable = true;
   services.power-profiles-daemon.enable = true;
-  services.asusd.enable = true;
+  services.asusd = {
+    enable = true;
+    enableUserService = true;
+  };
+  services.supergfxd = {
+    enable = true;
+  };
+
 
   powerManagement = {
     enable = true;

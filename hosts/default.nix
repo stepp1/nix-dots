@@ -39,6 +39,7 @@
     filelight
     discord
     autossh
+    notion-app-enhanced
   ];
   programs.noisetorch.enable = true;
 

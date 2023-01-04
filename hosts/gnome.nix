@@ -30,7 +30,6 @@
     x11-gestures
     bluetooth-quick-connect
     # asusctl-gex
-    supergfxctl-gex
     pop-shell
     # 
   ]);

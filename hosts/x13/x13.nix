@@ -42,7 +42,21 @@
       pkgs.coreutils
     ];
   };
-  logind.extraConfig = ''
+  services.logind.extraConfig = ''
     HandlePowerKey=hibernate
   '';
-}
+  environment = {
+    etc = {
+      "supergfxd.conf" = {
+        mode = "0644";
+        source = (pkgs.formats.json { }).generate "supergfxd.conf" {
+          mode = "hybrid";
+          vfio_enable = false;
+          vfio_save = false;
+          always_reboot = false;
+          no_logind = false;
+          logout_timeout_s = 180;
+        };
+      };
+    };
+  }

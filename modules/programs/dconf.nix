@@ -351,8 +351,24 @@ with lib.hm.gvariant;
     "org/gnome/shell" = {
       disable-user-extensions = false;
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "tiling-assistant@leleat-on-github" "dash-to-dock@micxgx.gmail.com" ];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "extension-list@tu.berry" "pop-shell@system76.com" "supergfxctl-gex@asus-linux.org" ];
-      favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
+      enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "Vitals@CoreCoding.com"
+        "no-overview@fthx"
+        "clipboard-indicator@tudmotu.com"
+        "extension-list@tu.berry"
+        "pop-shell@system76.com"
+        "supergfxctl-gex@asus-linux.org"
+        "x11gestures@joseexposito.github.io"
+        "transparent-shell@siroj42.github.io"
+      ];
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Calendar.desktop"
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Terminal.desktop"
+        "code.desktop"
+      ];
       last-selected-power-profile = "power-saver";
       welcome-dialog-last-shown-version = "43.1";
     };

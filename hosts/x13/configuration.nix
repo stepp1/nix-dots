@@ -45,13 +45,15 @@
     powertop
     gnome.gnome-power-manager
     gnomeExtensions.cpu-power-manager
-    gnomeExtensions.upower-battery
     gnomeExtensions.appindicator
+    gnomeExtensions.supergfxctl-gex
     asusctl
     filelight
     # distrobox
     touchegg
     easyeffects
+
+    chromium # for google meets :/
   ];
 
   ## must be at the end! or it can cause race problems w/ zfs & udev

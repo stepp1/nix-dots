@@ -4,7 +4,7 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true;
+    displayManager.gdm.wayland = false;
     desktopManager.gnome.enable = true;
   };
 
@@ -30,10 +30,10 @@
     x11-gestures
     bluetooth-quick-connect
     # asusctl-gex
-    supergfxctl-gex
     pop-shell
     # 
   ]);
+  services.gnome.gnome-keyring.enable = true;
   environment.gnome.excludePackages = with pkgs.gnome;
     [
       baobab # disk usage analyzer

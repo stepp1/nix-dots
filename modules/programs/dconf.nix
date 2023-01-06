@@ -310,7 +310,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+      ];
       email = [ "<Super>e" ];
       home = [ "<Super>n" ];
       rotate-video-lock-static = [ ];
@@ -337,11 +342,33 @@ with lib.hm.gvariant;
       name = "keyboard-bg";
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "Launch4";
+      command = "asusctl profile -n";
+      name = "asusctl profiles";
+    };
+
     "org/gnome/shell" = {
       disable-user-extensions = false;
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "tiling-assistant@leleat-on-github" "dash-to-dock@micxgx.gmail.com" ];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "Vitals@CoreCoding.com" "no-overview@fthx" "clipboard-indicator@tudmotu.com" "extension-list@tu.berry" "pop-shell@system76.com" "supergfxctl-gex@asus-linux.org" ];
-      favorite-apps = [ "firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "code.desktop" ];
+      enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "Vitals@CoreCoding.com"
+        "no-overview@fthx"
+        "clipboard-indicator@tudmotu.com"
+        "extension-list@tu.berry"
+        "pop-shell@system76.com"
+        "supergfxctl-gex@asus-linux.org"
+        "x11gestures@joseexposito.github.io"
+        "transparent-shell@siroj42.github.io"
+      ];
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Calendar.desktop"
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Terminal.desktop"
+        "code.desktop"
+      ];
       last-selected-power-profile = "power-saver";
       welcome-dialog-last-shown-version = "43.1";
     };

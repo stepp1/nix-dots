@@ -7,5 +7,6 @@
       defaultCacheTtl = 60 * 60 * 24 * 7;
       maxCacheTtl = 60 * 60 * 24 * 7;
     };
+    gnome-keyring.enable = true;
   };
 }
